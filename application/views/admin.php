@@ -4,6 +4,11 @@
 
 </div>
 
+<!--botao comentarios --> 
+<div class="text-left">
+    <a href="<?php echo site_url('admin/verComentarios')?>" class="btn btn-default" >Ver Comentarios</a>
+</div>
+
 <div class="panel panel-info">
 	<div class="panel-heading">SOBRE</div>
 	<div class="panel-body">

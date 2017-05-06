@@ -32,6 +32,16 @@ class admin extends CI_Controller {
 			$this->load->view('common/footer');
 	}
 	
+        public function verComentarios()
+	{
+			$this->load->view('common/header');
+
+			$comentarios = $this->AdminModel->comentariosLista();
+			$data['comentarios'] = $comentarios;			
+			$this->load->view('comentarios', $data);
+			$this->load->view('common/footer');
+	}
+	
 	
 	public function sobre(){
 	

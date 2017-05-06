@@ -50,6 +50,7 @@
 						<li><a href="<?php echo site_url("site/carreira")?>">Carreira</a></li>
 						<li><a href="<?php echo site_url("site/trabalho")?>">Trabalhos</a></li>
 						<li><a href="<?php echo site_url("site/contato")?>">Contato</a></li>
+						<li><a href="<?php echo site_url("site/mural")?>">Mural de visita</a></li>
 
 					</ul>
 				</div>

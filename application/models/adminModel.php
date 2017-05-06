@@ -35,6 +35,17 @@ class adminModel extends CI_Model {
 	
 		return $row;
 	}
+        
+        
+        /**
+         * Obtemos lista dos contatos registrados
+         * @return array
+         */
+	function comentariosLista(){	
+		$query = $this->db->get('contato'); 
+		$result = $query->result_array();
+                return $result;
+	}
 	
 	
 	function sobreUpdate($sobreMsgInicial, $sobreFoto, $sobreNomeCompleto, $sobreDadosBasicos, $sobreResumo, $sobreMetas, $sobreHobbies) {
