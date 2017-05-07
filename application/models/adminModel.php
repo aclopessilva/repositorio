@@ -41,7 +41,7 @@ class adminModel extends CI_Model {
          * Obtemos lista dos contatos registrados
          * @return array
          */
-	function comentariosLista(){	
+	function comentariosLista($pagina = 1){	
 		$query = $this->db->get('contato'); 
 		$result = $query->result_array();
                 return $result;

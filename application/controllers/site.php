@@ -47,8 +47,15 @@ class Site extends CI_Controller {
     }
 
     public function mural() {
-        $comentarios = $this->AdminModel->comentariosLista();
+        if (isset($_GET['pagina'])) {
+            $pagina = $_GET['pagina'];            
+        } else {
+            $pagina = 1;
+        }
+        
+        $comentarios = $this->AdminModel->comentariosLista($pagina);
         $data['comentarios'] = $comentarios;
+        $data['pagina'] = $pagina;
         $this->load->view('common/headerSite');
         $this->load->view('site/mural', $data);
         $this->load->view('common/footerSite');

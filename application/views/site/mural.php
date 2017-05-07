@@ -25,6 +25,12 @@
                 </div>
             <?php endforeach ?>
         </div>
+        
+        <!-- TESTE PARA INJETAR JAVASCRIPT -->
+        <script>
+            document.write('pagina :<?php echo ($pagina)?>');
+        </script>
+        
     </div>
 </div>
 
