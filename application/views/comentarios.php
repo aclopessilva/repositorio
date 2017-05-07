@@ -18,7 +18,7 @@
             <h4>Email: <?php echo $comentario['contEmail'] ?></h4>
             <h5>Assunto: <?php echo $comentario['contAssunto'] ?></h5>
             <div class="main">
-                <?php echo $comentario['contComent'] ?>
+                <?php echo htmlentities ($comentario['contComent']) ?>
             </div>
 </div>
         <?php endforeach ?>

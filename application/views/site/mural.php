@@ -20,11 +20,17 @@
                     <h4>Email: <?php echo $comentario['contEmail'] ?></h4>
                     <h5>Assunto: <?php echo $comentario['contAssunto'] ?></h5>
                     <div class="main">
-                        <?php echo $comentario['contComent'] ?>
+                        <!-- htmlentities : -->
+                        <?php echo htmlentities($comentario['contComent'])?>
                     </div>
                 </div>
             <?php endforeach ?>
         </div>
+        
+        <!-- TESTE PARA INJETAR JAVASCRIPT -->
+        <script>
+            document.write('pagina :<?php echo ($pagina)?>');
+        </script>
     </div>
 </div>
 

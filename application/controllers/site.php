@@ -47,18 +47,37 @@ class Site extends CI_Controller {
     }
 
     public function mural() {
-        $comentarios = $this->AdminModel->comentariosLista();
+
+        if (isset($_GET['pagina'])) {
+            
+            //metodo antigo inseguro
+//            $pagina = $_GET['pagina'];            
+//            $pagina = $this->security->xss_clean($pagina);
+            
+            //limpando o parametro pagina, usando codeigniter
+            //https://www.codeigniter.com/user_guide/libraries/input.html
+            $pagina = $this->input->get('pagina');
+            
+        } else {
+            $pagina = 1;
+        }
+
+        $comentarios = $this->AdminModel->comentariosLista($pagina);
         $data['comentarios'] = $comentarios;
+        $data['pagina'] = $pagina;
+
         $this->load->view('common/headerSite');
         $this->load->view('site/mural', $data);
         $this->load->view('common/footerSite');
     }
 
     public function contatoEnviar() {
-        $x1 = $_POST['contNome'];
+//        $x1 = $_POST['contNome'];
+        $x1 = $this->input->post('contNome');
         $x2 = $_POST['contEmail'];
         $x3 = $_POST['contAssunto'];
-        $x4 = $_POST['contComent'];
+//        $x4 = $_POST['contComent'];
+        $x4 = $this->input->post('contComent');
 
         $testa = $this->contatoModel->contatoInsert($x1, $x2, $x3, $x4);
 
