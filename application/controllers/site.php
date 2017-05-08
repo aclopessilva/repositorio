@@ -49,7 +49,7 @@ class Site extends CI_Controller {
     public function mural() {
 
         if (isset($_GET['pagina'])) {
-            
+            //** PARA URL MALICIOSA!**//
             //metodo antigo inseguro
 //            $pagina = $_GET['pagina'];            
 //            $pagina = $this->security->xss_clean($pagina);
@@ -74,8 +74,8 @@ class Site extends CI_Controller {
     public function contatoEnviar() {
 //        $x1 = $_POST['contNome'];
         $x1 = $this->input->post('contNome');
-        $x2 = $_POST['contEmail'];
-        $x3 = $_POST['contAssunto'];
+        $x2 = $this->input->post('contEmail');
+        $x3 = $this->input->post('contAssunto');
 //        $x4 = $_POST['contComent'];
         $x4 = $this->input->post('contComent');
 
